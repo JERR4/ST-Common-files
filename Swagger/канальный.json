@@ -1,0 +1,65 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "КР СТ Канальный уровень",
+    "description": "API для работы с канальным уровнем",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8001/",
+      "description": "Локальный сервер разработки"
+    }
+  ],
+  "paths": {
+    "/segments/code": {
+      "post": {
+        "tags": [
+          "segments"
+        ],
+        "summary": "Создание сегмента по коду",
+        "description": "Метод для создания сегмента по коду",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/segment"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ОК"
+          },
+          "400": {
+            "description": "Неверный запрос"
+          },
+          "500": {
+            "description": "Внутренняя ошибка сервера"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "segment": {
+        "type": "object",
+        "properties": {
+          "segment": {
+            "type": "string",
+            "nullable": true,
+            "example": "Пример сегмента",
+            "description": "Код сегмента"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "segment"
+        ]
+      }
+    }
+  }
+}

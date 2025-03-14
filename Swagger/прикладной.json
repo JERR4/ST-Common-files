@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "КР СТ Прикладной уровень",
+    "description": "API для работы с прикладным уровнем",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8010",
+      "description": "Земля"
+    },
+    {
+      "url": "http://localhost:8020",
+      "description": "Марс"
+    }
+  ],
+  "paths": {
+    "/receive": {
+      "post": {
+        "tags": [
+          "messages"
+        ],
+        "summary": "Получить новое сообщение",
+        "description": "Метод для получения нового сообщения",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/message"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "ОК"
+          },
+          "400": {
+            "description": "Неверный запрос"
+          },
+          "500": {
+            "description": "Внутренняя ошибка сервера"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "message": {
+        "type": "object",
+        "description": "Структура передаваемого сообщения",
+        "properties": {
+          "socket_id": {
+            "type": "number",
+            "example": 1,
+            "description": "Идентификатор сокета, через который передается сообщение"
+          },
+          "username": {
+            "type": "string",
+            "example": "Ларин Алексей",
+            "description": "Имя пользователя, отправившего сообщение"
+          },
+          "data": {
+            "type": "string",
+            "example": "Привет, Ларин Иван",
+            "description": "Текст сообщения"
+          },
+          "send_time": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-14T13:45:41Z",
+            "description": "Время отправки сообщения в формате ISO 8601"
+          }
+        }
+      }
+    }
+  }
+}

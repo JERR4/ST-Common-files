@@ -1,0 +1,95 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "КР СТ Транспортный уровень",
+    "description": "API для взаимодействия на транспортном уровне",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8002",
+      "description": "Локальный сервер транспортного уровня"
+    }
+  ],
+  "paths": {
+    "/send/": {
+      "post": {
+        "tags": [
+          "transport"
+        ],
+        "summary": "Отправка сообщения",
+        "description": "Метод для отправки сообщения на транспортном уровне",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/message"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Сообщение успешно отправлено"
+          },
+          "400": {
+            "description": "Ошибка в запросе"
+          },
+          "500": {
+            "description": "Внутренняя ошибка сервера"
+          }
+        }
+      }
+    },
+    "/upload/": {
+      "post": {
+        "tags": [
+          "transport"
+        ],
+        "summary": "Загрузка данных",
+        "description": "Метод для загрузки данных на транспортном уровне",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/message"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Данные успешно загружены"
+          },
+          "400": {
+            "description": "Ошибка в запросе"
+          },
+          "500": {
+            "description": "Внутренняя ошибка сервера"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "message": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true,
+            "example": "Пример сообщения",
+            "description": "Текст сообщения"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "message"
+        ]
+      }
+    }
+  }
+}
