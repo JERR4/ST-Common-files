@@ -52,7 +52,37 @@
             "type": "string",
             "nullable": true,
             "example": "Пример сегмента",
+            "description": "Сообщение сегмента"
+          },
+          "message_id": {
+            "type": "integer",
+            "nullable": true,
+            "example": 1,
+            "description": "Номер сообщения"
+          },
+          "segment_number": {
+            "type": "integer",
+            "nullable": true,
+            "example": 2,
             "description": "Код сегмента"
+          },
+          "send_time": {
+            "type": "string",
+            "nullable": true,
+            "example": "2006-01-02T15:04:05Z07:00",
+            "description": "Время отправки"
+          },
+          "total_segment": {
+            "type": "integer",
+            "nullable": true,
+            "example": 6,
+            "description": "Общее количество сегментов сообщения"
+          },
+          "username": {
+            "type": "string",
+            "nullable": true,
+            "example": "hello55",
+            "description": "Имя пользователя"
           }
         },
         "additionalProperties": false,
