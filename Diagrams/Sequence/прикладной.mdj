@@ -600,9 +600,9 @@
 													},
 													"font": "Arial;13;0",
 													"parentStyle": false,
-													"left": 324,
+													"left": 312,
 													"top": 96,
-													"width": 81.80859375,
+													"width": 105.47265625,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 10,
@@ -610,7 +610,7 @@
 														"$ref": "AAAAAAGPAgTyf72zhe8="
 													},
 													"edgePosition": 1,
-													"text": "1 : WS(логин)"
+													"text": "1 : WS(username)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -716,9 +716,9 @@
 													},
 													"font": "Arial;13;0",
 													"parentStyle": false,
-													"left": 271,
+													"left": 259,
 													"top": 145,
-													"width": 81.80859375,
+													"width": 105.47265625,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 10,
@@ -726,7 +726,7 @@
 														"$ref": "AAAAAAGPAgU6cr3K30c="
 													},
 													"edgePosition": 1,
-													"text": "2 : WS(логин)"
+													"text": "2 : WS(username)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -842,7 +842,7 @@
 														"$ref": "AAAAAAGPAg26773klRI="
 													},
 													"edgePosition": 1,
-													"text": "3 : WS send(socket_id, логин, время отправки, сообщение)",
+													"text": "3 : WS send(socket_id, username, send_time, message)",
 													"wordWrap": true
 												},
 												{
@@ -959,7 +959,7 @@
 														"$ref": "AAAAAAGPAg/+ar4D1tM="
 													},
 													"edgePosition": 1,
-													"text": "4 : POST /send (логин, время отправки, сообщение, флаг ошибки)"
+													"text": "4 : POST /send (username, send_time, message)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1192,7 +1192,7 @@
 														"$ref": "AAAAAAGPAhM5Bb42ozw="
 													},
 													"edgePosition": 1,
-													"text": "6 : POST /receive(логин, время отправки, сообщение, флаг ошибки)"
+													"text": "6 : POST /receive(username, send_time, message, error)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1416,16 +1416,16 @@
 													"font": "Arial;13;0",
 													"parentStyle": false,
 													"left": 128,
-													"top": 381,
+													"top": 388,
 													"width": 378,
-													"height": 26,
+													"height": 13,
 													"alpha": 1.7273987172903837,
 													"distance": 19.235384061671343,
 													"hostEdge": {
 														"$ref": "AAAAAAGPAi1Aqb5mNOs="
 													},
 													"edgePosition": 1,
-													"text": "8 : WS send(логин, время отправки, сообщение, флаг ошибки)",
+													"text": "8 : WS send(socket_id, username, send_time, message, error)",
 													"wordWrap": true
 												},
 												{
@@ -1542,7 +1542,7 @@
 														"$ref": "AAAAAAGPAi+Sj76IQdc="
 													},
 													"edgePosition": 1,
-													"text": "9 : WS send(socket_id, логин, время отправки, сообщение)"
+													"text": "9 : WS send(socket_id, username, send_time, message)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1658,7 +1658,7 @@
 														"$ref": "AAAAAAGPAjAhtL6gJRs="
 													},
 													"edgePosition": 1,
-													"text": "10 : POST /send(логин, время отправки, сообщение, флаг ошибки)"
+													"text": "10 : POST /send(username, send_time, message)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1891,7 +1891,7 @@
 														"$ref": "AAAAAAGPAjH0n77x4MM="
 													},
 													"edgePosition": 1,
-													"text": "12 : POST /receive (логин, время отправки, сообщение, флаг ошибки)"
+													"text": "12 : POST /receive (username, send_time, message, error)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -2124,7 +2124,7 @@
 														"$ref": "AAAAAAGPAjJ5db8gYS0="
 													},
 													"edgePosition": 1,
-													"text": "14 : WS send(логин, время отправки, сообщение, флаг ошибки)",
+													"text": "14 : WS send(socket_id, username, send_time, message, error)",
 													"wordWrap": true
 												},
 												{
@@ -2227,7 +2227,7 @@
 									"target": {
 										"$ref": "AAAAAAGPAgQILb1sm1s="
 									},
-									"arguments": "логин"
+									"arguments": "username"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2242,7 +2242,7 @@
 									"target": {
 										"$ref": "AAAAAAGPAgQILb1sm1s="
 									},
-									"arguments": "логин"
+									"arguments": "username"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2250,7 +2250,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGPAfZ4EL0cJCA="
 									},
-									"name": "WS send(socket_id, логин, время отправки, сообщение)",
+									"name": "WS send(socket_id, username, send_time, message)",
 									"source": {
 										"$ref": "AAAAAAGPAgPjwL1L2dg="
 									},
@@ -2271,7 +2271,7 @@
 									"target": {
 										"$ref": "AAAAAAGPAgRIOL2OxL0="
 									},
-									"arguments": "логин, время отправки, сообщение, флаг ошибки"
+									"arguments": "username, send_time, message"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2301,7 +2301,7 @@
 									"target": {
 										"$ref": "AAAAAAGPAgQILb1sm1s="
 									},
-									"arguments": "логин, время отправки, сообщение, флаг ошибки"
+									"arguments": "username, send_time, message, error"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2324,7 +2324,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGPAfZ4EL0cJCA="
 									},
-									"name": "WS send(логин, время отправки, сообщение, флаг ошибки)",
+									"name": "WS send(socket_id, username, send_time, message, error)",
 									"source": {
 										"$ref": "AAAAAAGPAgQILb1sm1s="
 									},
@@ -2345,7 +2345,7 @@
 									"target": {
 										"$ref": "AAAAAAGPAgQILb1sm1s="
 									},
-									"arguments": "socket_id, логин, время отправки, сообщение"
+									"arguments": "socket_id, username, send_time, message"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2353,7 +2353,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGPAfZ4EL0cJCA="
 									},
-									"name": "POST /send(логин, время отправки, сообщение, флаг ошибки)",
+									"name": "POST /send(username, send_time, message)",
 									"source": {
 										"$ref": "AAAAAAGPAgQILb1sm1s="
 									},
@@ -2382,7 +2382,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGPAfZ4EL0cJCA="
 									},
-									"name": "POST /receive (логин, время отправки, сообщение, флаг ошибки)",
+									"name": "POST /receive (username, send_time, message, error)",
 									"source": {
 										"$ref": "AAAAAAGPAgRIOL2OxL0="
 									},
@@ -2411,7 +2411,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGPAfZ4EL0cJCA="
 									},
-									"name": "WS send(логин, время отправки, сообщение, флаг ошибки)",
+									"name": "WS send(socket_id, username, send_time, message, error)",
 									"source": {
 										"$ref": "AAAAAAGPAgQILb1sm1s="
 									},

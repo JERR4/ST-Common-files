@@ -197,7 +197,7 @@
 													"left": 182,
 													"top": 81,
 													"width": 1,
-													"height": 777
+													"height": 743
 												}
 											],
 											"font": "Arial;13;0",
@@ -205,7 +205,7 @@
 											"left": 104,
 											"top": 40,
 											"width": 156.91259765625,
-											"height": 818,
+											"height": 784,
 											"nameCompartment": {
 												"$ref": "AAAAAAGPu0Iw6SnKA9A="
 											},
@@ -323,7 +323,7 @@
 													"left": 372,
 													"top": 81,
 													"width": 1,
-													"height": 632
+													"height": 743
 												}
 											],
 											"font": "Arial;13;0",
@@ -331,7 +331,7 @@
 											"left": 336,
 											"top": 40,
 											"width": 72.736328125,
-											"height": 673,
+											"height": 784,
 											"nameCompartment": {
 												"$ref": "AAAAAAGPu0JhxCnsMQ4="
 											},
@@ -449,7 +449,7 @@
 													"left": 558,
 													"top": 81,
 													"width": 1,
-													"height": 729
+													"height": 743
 												}
 											],
 											"font": "Arial;13;0",
@@ -457,7 +457,7 @@
 											"left": 472,
 											"top": 40,
 											"width": 172.02001953125,
-											"height": 770,
+											"height": 784,
 											"nameCompartment": {
 												"$ref": "AAAAAAGPu0MsvyosOHc="
 											},
@@ -575,7 +575,7 @@
 													"left": 772,
 													"top": 81,
 													"width": 1,
-													"height": 688
+													"height": 743
 												}
 											],
 											"font": "Arial;13;0",
@@ -583,7 +583,7 @@
 											"left": 696,
 											"top": 40,
 											"width": 151.04736328125,
-											"height": 729,
+											"height": 784,
 											"nameCompartment": {
 												"$ref": "AAAAAAGPu0TWNipS580="
 											},
@@ -612,9 +612,9 @@
 													},
 													"font": "Arial;13;0",
 													"parentStyle": false,
-													"left": 293,
+													"left": 227,
 													"top": 177,
-													"width": 148.83984375,
+													"width": 281.07421875,
 													"height": 13,
 													"alpha": 1.5707963267948966,
 													"distance": 10,
@@ -622,7 +622,7 @@
 														"$ref": "AAAAAAGPu0WwiypxB2k="
 													},
 													"edgePosition": 1,
-													"text": "1 : POST Send(message)"
+													"text": "1 : POST Send(username, message, send_time)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1534,17 +1534,18 @@
 													},
 													"font": "Arial;13;0",
 													"parentStyle": false,
-													"left": 584,
+													"left": 586,
 													"top": 516,
-													"width": 167.12109375,
+													"width": 163.50927734375,
 													"height": 13,
+													"autoResize": true,
 													"alpha": 1.5707963267948966,
 													"distance": 10,
 													"hostEdge": {
 														"$ref": "AAAAAAGPu1aMiCvknB0="
 													},
 													"edgePosition": 1,
-													"text": "8 : POST Transfer (segment)"
+													"text": "8 : POST Transfer(segment)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -1883,7 +1884,7 @@
 														"$ref": "AAAAAAGPu1uP4yyiXOY="
 													},
 													"edgePosition": 1,
-													"text": "10 : POST Receive (message)"
+													"text": "10 : POST /receive (message)"
 												},
 												{
 													"_type": "EdgeLabelView",
@@ -2095,13 +2096,14 @@
 									"_parent": {
 										"$ref": "AAAAAAGPu0HiZym2y9w="
 									},
-									"name": "POST Send(message)",
+									"name": "POST Send",
 									"source": {
 										"$ref": "AAAAAAGPu0Iw6CnIOWI="
 									},
 									"target": {
 										"$ref": "AAAAAAGPu0MsvyoqomU="
-									}
+									},
+									"arguments": "username, message, send_time"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2196,13 +2198,14 @@
 									"_parent": {
 										"$ref": "AAAAAAGPu0HiZym2y9w="
 									},
-									"name": "POST Transfer (segment)",
+									"name": "POST Transfer",
 									"source": {
 										"$ref": "AAAAAAGPu0TWNipQEoU="
 									},
 									"target": {
 										"$ref": "AAAAAAGPu0MsvyoqomU="
-									}
+									},
+									"arguments": "segment"
 								},
 								{
 									"_type": "UMLMessage",
@@ -2224,7 +2227,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGPu0HiZym2y9w="
 									},
-									"name": "POST Receive (message)",
+									"name": "POST /receive (message)",
 									"source": {
 										"$ref": "AAAAAAGPu0MsvyoqomU="
 									},
