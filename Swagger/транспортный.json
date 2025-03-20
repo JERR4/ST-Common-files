@@ -18,7 +18,7 @@
           "transport"
         ],
         "summary": "Отправка сообщения",
-        "description": "Метод для отправки сообщения на транспортном уровне",
+        "description": "Метод для отправки сообщения с прикладного на транспортный уровень",
         "requestBody": {
           "required": true,
           "content": {
@@ -42,26 +42,26 @@
         }
       }
     },
-    "/upload/": {
+    "/transfer/": {
       "post": {
         "tags": [
           "transport"
         ],
-        "summary": "Загрузка данных",
-        "description": "Метод для загрузки данных на транспортном уровне",
+        "summary": "Передача сегмента сообщения",
+        "description": "Метод для передачи отдельного сегмента сообщения",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/message"
+                "$ref": "#/components/schemas/segment"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Данные успешно загружены"
+            "description": "Сегмент успешно передан"
           },
           "400": {
             "description": "Ошибка в запросе"
@@ -77,18 +77,65 @@
     "schemas": {
       "message": {
         "type": "object",
+        "description": "Структура сообщения",
+        "required": [
+          "username",
+          "message",
+          "send_time"
+        ],
         "properties": {
+          "username": {
+            "type": "string",
+            "example": "Ларин Алексей",
+            "description": "Имя пользователя, отправившего сообщение"
+          },
           "message": {
             "type": "string",
-            "nullable": true,
-            "example": "Пример сообщения",
+            "example": "Привет, Ларин Иван",
             "description": "Текст сообщения"
+          },
+          "send_time": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2025-03-14T13:45:41Z",
+            "description": "Время отправки сообщения в формате ISO 8601"
+          }
+        }
+      },
+      "segment": {
+        "type": "object",
+        "properties": {
+          "segment": {
+            "type": "string",
+            "nullable": true,
+            "example": "Пример сегмента",
+            "description": "Сообщение сегмента"
+          },
+          "segment_number": {
+            "type": "integer",
+            "nullable": true,
+            "example": 2,
+            "description": "Код сегмента"
+          },
+          "send_time": {
+            "type": "string",
+            "nullable": true,
+            "example": "2006-01-02T15:04:05Z07:00",
+            "description": "Время отправки"
+          },
+          "total_segment": {
+            "type": "integer",
+            "nullable": true,
+            "example": 6,
+            "description": "Общее количество сегментов сообщения"
+          },
+          "username": {
+            "type": "string",
+            "nullable": true,
+            "example": "hello55"
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "message"
-        ]
+        "description": "Имя пользователя"
       }
     }
   }

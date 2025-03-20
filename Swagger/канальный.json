@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/segments/code": {
+    "/code": {
       "post": {
         "tags": [
           "segments"
@@ -47,18 +47,19 @@
     "schemas": {
       "segment": {
         "type": "object",
+        "required": [
+          "segment",
+          "segment_number",
+          "send_time",
+          "total_segment",
+          "username"
+        ],
         "properties": {
           "segment": {
             "type": "string",
             "nullable": true,
             "example": "Пример сегмента",
             "description": "Сообщение сегмента"
-          },
-          "message_id": {
-            "type": "integer",
-            "nullable": true,
-            "example": 1,
-            "description": "Номер сообщения"
           },
           "segment_number": {
             "type": "integer",
@@ -85,10 +86,7 @@
             "description": "Имя пользователя"
           }
         },
-        "additionalProperties": false,
-        "required": [
-          "segment"
-        ]
+        "additionalProperties": false
       }
     }
   }

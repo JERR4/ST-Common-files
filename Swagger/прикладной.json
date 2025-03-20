@@ -52,18 +52,19 @@
       "message": {
         "type": "object",
         "description": "Структура передаваемого сообщения",
+        "required": [
+          "username",
+          "send_time",
+          "error",
+          "message"
+        ],
         "properties": {
-          "socket_id": {
-            "type": "number",
-            "example": 1,
-            "description": "Идентификатор сокета, через который передается сообщение"
-          },
           "username": {
             "type": "string",
             "example": "Ларин Алексей",
             "description": "Имя пользователя, отправившего сообщение"
           },
-          "data": {
+          "message": {
             "type": "string",
             "example": "Привет, Ларин Иван",
             "description": "Текст сообщения"
@@ -73,6 +74,11 @@
             "format": "date-time",
             "example": "2025-03-14T13:45:41Z",
             "description": "Время отправки сообщения в формате ISO 8601"
+          },
+          "error": {
+            "type": "string",
+            "example": "Отправка сообщения не удалась",
+            "description": "Сообщение об ошибке"
           }
         }
       }
